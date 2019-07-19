@@ -4,7 +4,8 @@ const User = use('App/Models/User')
 
 class UserController {
     async index({response}){
-        const users = User.all()
+        const users = await User.all()
+
         response.status(200).send({message:"succses for deploy", data:users})
     }
 
