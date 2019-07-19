@@ -21,3 +21,4 @@ Route.get('/', () => {
 })
 
 Route.get('/users','UserController.index')
+Route.post('/users','UserController.store')
