@@ -22,3 +22,6 @@ Route.get('/', () => {
 
 Route.get('/users','UserController.index')
 Route.post('/users','UserController.store')
+Route.get('/question','QuestionController.index')
+Route.post('/question','QuestionController.store')
+Route.post('/answer','AnswerController.store')
