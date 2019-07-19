@@ -1,6 +1,15 @@
 'use strict'
 
+const Answer = use('App/Models/Answer')
+
 class AnswerController {
+
+    async index({response}){
+        const answers = await Answer.all()
+
+        response.status(200).send({data:answers})
+    }
+
     async store({request,response}){
 
         try{
@@ -8,7 +17,7 @@ class AnswerController {
 
             const answer = await Answer.create(data)
     
-            return response.status(200).send({message:"success"})
+            return response.status(200).send({message:"success",data:answer})
     
         }catch(e){
             console.log(e)

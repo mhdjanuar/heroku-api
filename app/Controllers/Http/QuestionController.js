@@ -18,7 +18,7 @@ class QuestionController {
         try{
             const questions = Question.create(request.all())
 
-            response.status(200).send({message:'succses',questions})
+            response.status(200).send({message:'succses',data:questions})
         }
         catch(e){
             console.log(e)
