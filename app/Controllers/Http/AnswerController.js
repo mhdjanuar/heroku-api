@@ -13,11 +13,11 @@ class AnswerController {
     async store({request,response}){
 
         try{
-            const data = request.all()
+            const answers = request.collect(['question_id','user_id','answer'])
 
-            const answer = await Answer.create(data)
+            const answer = await Answer.createMany(answers)
     
-            return response.status(200).send({message:"success",data:answer})
+            return response.status(200).send({message:"success"})
     
         }catch(e){
             console.log(e)
