@@ -14,7 +14,7 @@ class UserController {
             const data = request.all()
             const user = await User.create(data)
 
-            response.status(200).send(user)
+            response.status(200).send({user})
         }
         catch(e){
             console.log(e)
